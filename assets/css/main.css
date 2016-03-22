@@ -1,0 +1,49 @@
+/***MIXINS**************/
+/***FONTS**************/
+.titulo-seccion {
+  font-size: 40px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  color: #333333;
+  text-align: center;
+  text-transform: uppercase; }
+
+.sub-seccion {
+  font-size: 16px;
+  font-family: 'Droid Serif';
+  color: #777777;
+  text-align: center; }
+
+/***UTILITIES**************/
+.text-white {
+  color: white; }
+
+/*****/
+html {
+  width: 100%;
+  height: 100%; }
+
+/***HEADER**************/
+header {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/header-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  header .btn-agency {
+    text-transform: uppercase;
+    background-color: #FED136;
+    padding: 25px 15px;
+    color: white;
+    border: none;
+    border-radius: 3px; }
+
+/***SERVICES**************/
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+/*****************/
+
+/*# sourceMappingURL=main.css.map */
