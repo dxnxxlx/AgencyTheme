@@ -1,47 +1,153 @@
 <!DOCTYPE html>
 html
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
-		title Agency Theme
-		link(href="https://fonts.googleapis.com/css?family=Kaushan+Script", rel="stylesheet", type="text/css")
-		link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700", rel="stylesheet", type="text/css")
-		link(href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic", rel="stylesheet", type="text/css")
-		link(rel="stylesheet", href="assets/css/bootstrap.css")
-		link(rel="stylesheet", href="assets/css/main.css")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+        title Agency Theme
+        link(href="https://fonts.googleapis.com/css?family=Kaushan+Script", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/css?family=Montserrat:400,700", rel="stylesheet", type="text/css")
+        link(href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic", rel="stylesheet", type="text/css")
+        link(rel="stylesheet", href="assets/font-awesome/css/font-awesome.min.css")
+        link(rel="stylesheet", href="assets/css/bootstrap.css")
+        link(rel="stylesheet", href="assets/css/main.css")
 
 
-	body
-		header
-			nav.navbar.navbar-default(role="navigation")
-				.navbar-header
-					button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse",aria-expanded="false", aria-controls="navbar")
-						span.sr-only Toggle navigation
-						span.icon-bar
-						span.icon-bar
-						span.icon-bar
-					a.navbar-brand(href="#") Star Bootstrap
-
-				#navbar-inverse.collapse.navbar-collapse
-					ul.nav.navbar-nav.navbar-right
-						li.active: a( href="#services") Services
-						li: a( href="#portfolio" ) Portfolio
-						li: a( href="#about" ) About
-						li: a( href="#team" ) Team
-						li: a( href="#contact" ) Contact
-
-			h2 welcome To Our Studio
-			h1 It's nice to meet you
-			button.btn-agency tell me more
-
-		section#services
-			.container
-				h2.titulo-seccion services
-				p.sub-seccion  Lorem ipsum dolor sit amet consectetur.
-				.row 
-					.col-md-3*3>
+    body
+        - var subseccion = "Lorem ipsum dolor sit amet consectetur."
+        - var services = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impdit."
+        - var subtitulo = "Lorem ipsum dolor sit amet consectetur."
+        - var about = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
 
 
+        mixin titulo-seccion(titulo)
+            h2.titulo-seccion= titulo
+            p.sub-seccion= subseccion
 
-			
-	
+        mixin portfolio(foto, title, sub)
+            .col-sm-6.col-md-4
+                .img-portfolio
+                    img(src='img/portfolio/#{foto}-preview.png')
+                p.subtitulo #{title}
+                p.sub-seccion #{sub} Design
+
+        mixin timeline-caja(foto, fecha, evento)
+            .timeline-caja
+                .timeline-img
+                    img(src='img/about/#{foto}.jpg')
+                .timeline-contenido
+                    p.subtitulo= fecha
+                    p.subtitulo= evento
+                    p.texto-contenido= about
+        mixin redes(redsocial)
+            a(href="#"): i.fa.fa-'redsocial'
+
+        mixin perfil(foto, nombre, cargo)
+            .col-sm-4
+                .img-perfil
+                    img(src='img/perfil/#{foto}.jpg')
+            p.subtitulo= nombre
+            p.texto-contenido Lead #{cargo}
+            .redes
+                block
+                +redes('twitter')
+                +redes('facebook')
+                +redes('linkedin')
+
+        header
+            nav.navbar.navbar-default(role="navigation")
+                .navbar-header
+                    button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse",aria-expanded="false", aria-controls="navbar")
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href="#") Star Bootstrap
+
+                #navbar-inverse.collapse.navbar-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li.active: a( href="#services") Services
+                        li: a( href="#portfolio" ) Portfolio
+                        li: a( href="#about" ) About
+                        li: a( href="#team" ) Team
+                        li: a( href="#contact" ) Contact
+
+            h2 welcome To Our Studio
+            h1 It's nice to meet you
+            button.btn-agency tell me more
+
+        section#services
+            .container
+                +titulo-seccion('services')
+                .row
+                    .col-md-4
+                        span.fa-stack.fa-4x
+                            i.fa.fa-circle.fa-stack-2x
+                            i.fa.fa-shopping-cart.fa-stack-1x
+                        p.subtitulo E-Commerce
+                        p.texto-contenido= services
+                    .col-md-4
+                        span.fa-stack.fa-4x
+                            i.fa.fa-circle.fa-stack-2x
+                            i.fa.fa-laptop.fa-stack-1x
+                        p.subtitulo Responsive Design
+                        p.texto-contenido= services
+                    .col-md-4
+                        span.fa-stack.fa-4x
+                            i.fa.fa-circle.fa-stack-2x
+                            i.fa.fa-lock.fa-stack-1x
+                        p.subtitulo Web Security
+                        p.texto-contenido= services
+        section#portfolio
+            .container
+                +titulo-seccion('portfolio')
+
+                .row
+                    +portfolio('roundicons', 'Round Icons', 'Graphic')
+                    +portfolio('startup-framework', 'Startup Framework', 'Website')
+                    +portfolio('treehouse', 'Treehouse', 'Website')
+                .row
+                    +portfolio('golden', 'Golden', 'Website')
+                    +portfolio('escape', 'Escape', 'Website')
+                    +portfolio('dreams', 'Dreams', 'Website')
+
+        section#about
+            .container
+                +titulo-seccion('about')
+                .timeline
+                    +timeline-caja('1', '2009-2011', 'Our Humble Beginnings')
+                    +timeline-caja('2', 'march 2011', 'An Agency is Born')
+                    +timeline-caja('3', 'december 2012', 'Transition to Full Service')
+                    +timeline-caja('4', 'july 2014', 'Phase Two Expansion')
+                    .timeline-caja
+                        .timeline-img
+                            p be part of our story!
+
+        section#team
+            .container
+                +titulo-seccion('our awesome team')
+                +perfil('1', 'Kay Garland', 'Designer')
+                +perfil('2', 'Larry Parker', 'Marketer')
+                +perfil('3', 'Diana Pertersen', 'Developer')
+
+                
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    

@@ -3,7 +3,6 @@
 	text-transform: uppercase;
 }
 
-
 /***FONTS**************/
 
 .titulo-seccion {
@@ -19,6 +18,21 @@
 	font-family: 'Droid Serif';
 	color: #777777;
 	text-align: center;
+	font-style: italic;
+}
+.subtitulo{
+	font-size: 20px;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	color: #333333;
+	text-align: center;
+}
+.texto-contenido{
+	font-size: 14px;
+	font-family: 'Droid Serif';
+	color: #777777;
+	text-align: center;
+	line-height: 1.7;
 }
 
 /***UTILITIES**************/
@@ -27,15 +41,22 @@
 }
 /*****/
 html{
-	width: 100%;
 	height: 100%;
+	width: 100%;;
 }
+body{
+	@extend html;
+	section:nth-child(odd){
+		background-color: #F7F7F7;
+	} 
+
+}
+
 
 /***HEADER**************/
 header{
-	width: 100%;
-	height: 100%;
-	background-image: url('../img/header-bg.jpg');
+	@extend html;
+	background-image: url(../../img/header-bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	.btn-agency{
@@ -49,13 +70,29 @@ header{
 
 }
 
-#services{
-	
-}
+
 /***SERVICES**************/
+#services{
+	.col-md-4{
+		    text-align: center;
+	}
+}
+.fa-circle{
+	color: #FED136;
+}
+.fa-stack-1x{
+	color: #ffffff;
+}
+/***PORTFOLIO**************/
+/***ABOUT**************/
+
 /*****************/
 /*****************/
 /*****************/
 /*****************/
-/*****************/
-/*****************/
+/*  .timeline-caja:nth-child(even) .timeline-contenido {
+    	float: right;
+        
+    .timeline-caja:nth-child(odd) .timeline-contenido {
+   		text-align: left;
+   */
