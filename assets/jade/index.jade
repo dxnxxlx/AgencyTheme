@@ -13,69 +13,32 @@ html
 
 
     body
-        - var subseccion = "Lorem ipsum dolor sit amet consectetur."
-        - var services = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impdit."
-        - var subtitulo = "Lorem ipsum dolor sit amet consectetur."
-        - var about = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!"
+        include ./_variables
+        include ./_mixins
+        section#navegador    
+            nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+                .container
+                    .navbar-header.page-scroll
+                        button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse",aria-expanded="false", aria-controls="navbar")
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand.page-scroll(href="#header") Star Bootstrap
 
+                    #navbar-inverse.collapse.navbar-collapse
+                        ul.nav.navbar-nav.navbar-right
+                            li: a(href="#services").page-scroll Services
+                            li: a.page-scroll(href="#portfolio" ) Portfolio
+                            li: a.page-scroll(href="#about" ) About
+                            li: a.page-scroll(href="#team" ) Team
+                            li: a.page-scroll(href="#contact" ) Contact
+        header#header
+            h2.text-white Welcome To Our Studio!
+            h1.text-white It's nice to meet you
+            a.btn-agency.page-scroll(href="#services") tell me more
 
-        mixin titulo-seccion(titulo)
-            h2.titulo-seccion= titulo
-            p.sub-seccion= subseccion
-
-        mixin portfolio(foto, title, sub)
-            .col-sm-6.col-md-4
-                .img-portfolio
-                    img(src='img/portfolio/#{foto}-preview.png')
-                p.subtitulo #{title}
-                p.sub-seccion #{sub} Design
-
-        mixin timeline-caja(foto, fecha, evento)
-            .timeline-caja
-                .timeline-img
-                    img(src='img/about/#{foto}.jpg')
-                .timeline-contenido
-                    p.subtitulo= fecha
-                    p.subtitulo= evento
-                    p.texto-contenido= about
-        mixin redes(redsocial)
-            a(href="#"): i.fa.fa-'redsocial'
-
-        mixin perfil(foto, nombre, cargo)
-            .col-sm-4
-                .img-perfil
-                    img(src='img/perfil/#{foto}.jpg')
-            p.subtitulo= nombre
-            p.texto-contenido Lead #{cargo}
-            .redes
-                block
-                +redes('twitter')
-                +redes('facebook')
-                +redes('linkedin')
-
-        header
-            nav.navbar.navbar-default(role="navigation")
-                .navbar-header
-                    button.navbar-toggle.collapsed( type="button", data-toggle="collapse", data-target="#navbar-inverse",aria-expanded="false", aria-controls="navbar")
-                        span.sr-only Toggle navigation
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                    a.navbar-brand(href="#") Star Bootstrap
-
-                #navbar-inverse.collapse.navbar-collapse
-                    ul.nav.navbar-nav.navbar-right
-                        li.active: a( href="#services") Services
-                        li: a( href="#portfolio" ) Portfolio
-                        li: a( href="#about" ) About
-                        li: a( href="#team" ) Team
-                        li: a( href="#contact" ) Contact
-
-            h2 welcome To Our Studio
-            h1 It's nice to meet you
-            button.btn-agency tell me more
-
-        section#services
+        section#services.pb-5
             .container
                 +titulo-seccion('services')
                 .row
@@ -97,20 +60,19 @@ html
                             i.fa.fa-lock.fa-stack-1x
                         p.subtitulo Web Security
                         p.texto-contenido= services
-        section#portfolio
+        section#portfolio.pb-5
             .container
                 +titulo-seccion('portfolio')
 
                 .row
-                    +portfolio('roundicons', 'Round Icons', 'Graphic')
+                    +portfolio('roundicons-preview', 'Round Icons', 'Graphic')
                     +portfolio('startup-framework', 'Startup Framework', 'Website')
-                    +portfolio('treehouse', 'Treehouse', 'Website')
-                .row
-                    +portfolio('golden', 'Golden', 'Website')
-                    +portfolio('escape', 'Escape', 'Website')
-                    +portfolio('dreams', 'Dreams', 'Website')
+                    +portfolio('treehouse-preview', 'Treehouse', 'Website')
+                    +portfolio('golden-preview', 'Golden', 'Website')
+                    +portfolio('escape-preview', 'Escape', 'Website')
+                    +portfolio('dreams-preview', 'Dreams', 'Website')
 
-        section#about
+        section#about.mb-10
             .container
                 +titulo-seccion('about')
                 .timeline
@@ -118,16 +80,69 @@ html
                     +timeline-caja('2', 'march 2011', 'An Agency is Born')
                     +timeline-caja('3', 'december 2012', 'Transition to Full Service')
                     +timeline-caja('4', 'july 2014', 'Phase Two Expansion')
-                    .timeline-caja
-                        .timeline-img
+                    .timeline-caja.row
+                        .timeline-img.amarillo
                             p be part of our story!
 
-        section#team
+        section#team.pb-5
             .container
                 +titulo-seccion('our awesome team')
-                +perfil('1', 'Kay Garland', 'Designer')
-                +perfil('2', 'Larry Parker', 'Marketer')
-                +perfil('3', 'Diana Pertersen', 'Developer')
+                .row
+                    +perfil('1', 'Kay Garland', 'Designer')
+                    +perfil('2', 'Larry Parker', 'Marketer')
+                    +perfil('3', 'Diana Pertersen', 'Developer')
+                .row
+                    p.texto-team= team
+        section#clientes
+            .container
+                .row.text-center
+                    +cliente('envato')
+                    +cliente('designmodo')
+                    +cliente('themeforest')
+                    +cliente('creative-market')
+
+        section#contact.pb-5
+            .container
+                +titulo-seccion('contact us')
+                .row
+                    .col-md-6
+                        form
+                            +form('input', 'NAME')
+                            +form('input', 'EMAIL')
+                            +form('input', 'PHONE')
+                    .col-md-6
+                        +form('textarea', 'MESSAGE')
+                .row
+                    .col-md-12
+                        button.btn-agency(type="submit") send message
+
+        footer
+            .container
+                .row.text-center
+                    .col-md-4: p.copy Copyright © Your Website 2014
+                    .col-md-4: +redes
+                    .col-md-4: p
+                        a.links Privacy Policy
+                        a.links Terms of use
+
+        
+        script(type="text/javascript", src="assets/js/jquery.js")
+        script(type="text/javascript", src="assets/js/bootstrap.min.js")
+        script(type="text/javascript", src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+        script(type="text/javascript", src="assets/js/cbpAnimatedHeader.js")
+        script(type="text/javascript", src="assets/js/classie.js")
+        script(type="text/javascript", src="assets/js/jqBootstrapValidation.js")
+        script(type="text/javascript", src="assets/js/contact_me.js")
+        script(type="text/javascript", src="assets/js/agency.js")
+
+
+
+
+
+                
+
+
+
 
                 
 

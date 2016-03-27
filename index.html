@@ -12,29 +12,36 @@
     <link rel="stylesheet" href="assets/css/main.css"/>
   </head>
   <body>
-    <header>
-      <nav role="navigation" class="navbar navbar-default">
-        <div class="navbar-header">
-          <button type="button" data-toggle="collapse" data-target="#navbar-inverse" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#" class="navbar-brand">Star Bootstrap</a>
-        </div>
-        <div id="navbar-inverse" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    <section id="navegador">   
+      <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header page-scroll">
+            <button type="button" data-toggle="collapse" data-target="#navbar-inverse" aria-expanded="false" aria-controls="navbar" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#header" class="navbar-brand page-scroll">Star Bootstrap</a>
+          </div>
+          <div id="navbar-inverse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#services" class="page-scroll">Services</a></li>
+              <li><a href="#portfolio" class="page-scroll">Portfolio</a></li>
+              <li><a href="#about" class="page-scroll">About</a></li>
+              <li><a href="#team" class="page-scroll">Team</a></li>
+              <li><a href="#contact" class="page-scroll">Contact</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
-      <h2>welcome To Our Studio</h2>
-      <h1>It's nice to meet you</h1>
-      <button class="btn-agency">tell me more</button>
+    </section>
+    <header id="header">
+      <h2 class="text-white">Welcome To Our Studio!</h2>
+      <h1 class="text-white">It's nice to meet you</h1><a href="#services" class="btn-agency page-scroll">tell me more</a>
     </header>
-    <section id="services">
+    <section id="services" class="pb-5">
       <div class="container">
-            <h2 class="titulo-seccion">services</h2>
-            <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="titulo-seccion">services</h2>
+                <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
         <div class="row">
           <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shopping-cart fa-stack-1x"></i></span>
             <p class="subtitulo">E-Commerce</p>
@@ -51,10 +58,14 @@
         </div>
       </div>
     </section>
-    <section id="portfolio">
+    <section id="portfolio" class="pb-5">
       <div class="container">
-            <h2 class="titulo-seccion">portfolio</h2>
-            <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="titulo-seccion">portfolio</h2>
+                <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
         <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="img-portfolio"><img src="img/portfolio/roundicons-preview.png"/></div>
@@ -62,7 +73,7 @@
                 <p class="sub-seccion">Graphic Design</p>
               </div>
               <div class="col-sm-6 col-md-4">
-                <div class="img-portfolio"><img src="img/portfolio/startup-framework-preview.png"/></div>
+                <div class="img-portfolio"><img src="img/portfolio/startup-framework.png"/></div>
                 <p class="subtitulo">Startup Framework</p>
                 <p class="sub-seccion">Website Design</p>
               </div>
@@ -71,8 +82,6 @@
                 <p class="subtitulo">Treehouse</p>
                 <p class="sub-seccion">Website Design</p>
               </div>
-        </div>
-        <div class="row">
               <div class="col-sm-6 col-md-4">
                 <div class="img-portfolio"><img src="img/portfolio/golden-preview.png"/></div>
                 <p class="subtitulo">Golden</p>
@@ -91,77 +100,158 @@
         </div>
       </div>
     </section>
-    <section id="about">
+    <section id="about" class="mb-10">
       <div class="container">
-            <h2 class="titulo-seccion">about</h2>
-            <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="titulo-seccion">about</h2>
+                <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
         <div class="timeline">
-              <div class="timeline-caja">
-                <div class="timeline-img"><img src="img/about/1.jpg"/></div>
+              <div class="timeline-caja row">
                 <div class="timeline-contenido">
                   <p class="subtitulo">2009-2011</p>
                   <p class="subtitulo">Our Humble Beginnings</p>
                   <p class="texto-contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
                 </div>
+                <div class="timeline-img"><img src="img/about/1.jpg"/></div>
               </div>
-              <div class="timeline-caja">
-                <div class="timeline-img"><img src="img/about/2.jpg"/></div>
+              <div class="timeline-caja row">
                 <div class="timeline-contenido">
                   <p class="subtitulo">march 2011</p>
                   <p class="subtitulo">An Agency is Born</p>
                   <p class="texto-contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
                 </div>
+                <div class="timeline-img"><img src="img/about/2.jpg"/></div>
               </div>
-              <div class="timeline-caja">
-                <div class="timeline-img"><img src="img/about/3.jpg"/></div>
+              <div class="timeline-caja row">
                 <div class="timeline-contenido">
                   <p class="subtitulo">december 2012</p>
                   <p class="subtitulo">Transition to Full Service</p>
                   <p class="texto-contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
                 </div>
+                <div class="timeline-img"><img src="img/about/3.jpg"/></div>
               </div>
-              <div class="timeline-caja">
-                <div class="timeline-img"><img src="img/about/4.jpg"/></div>
+              <div class="timeline-caja row">
                 <div class="timeline-contenido">
                   <p class="subtitulo">july 2014</p>
                   <p class="subtitulo">Phase Two Expansion</p>
                   <p class="texto-contenido">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
                 </div>
+                <div class="timeline-img"><img src="img/about/4.jpg"/></div>
               </div>
-          <div class="timeline-caja">
-            <div class="timeline-img">
+          <div class="timeline-caja row">
+            <div class="timeline-img amarillo">
               <p>be part of our story!</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="team">
+    <section id="team" class="pb-5">
       <div class="container">
-            <h2 class="titulo-seccion">our awesome team</h2>
-            <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
-            <div class="col-sm-4">
-              <div class="img-perfil"><img src="img/perfil/1.jpg"/></div>
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="titulo-seccion">our awesome team</h2>
+                <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
             </div>
-            <p class="subtitulo">Kay Garland</p>
-            <p class="texto-contenido">Lead Designer</p>
-            <div class="redes"><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a>
-            </div>
-            <div class="col-sm-4">
-              <div class="img-perfil"><img src="img/perfil/2.jpg"/></div>
-            </div>
-            <p class="subtitulo">Larry Parker</p>
-            <p class="texto-contenido">Lead Marketer</p>
-            <div class="redes"><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a>
-            </div>
-            <div class="col-sm-4">
-              <div class="img-perfil"><img src="img/perfil/3.jpg"/></div>
-            </div>
-            <p class="subtitulo">Diana Pertersen</p>
-            <p class="texto-contenido">Lead Developer</p>
-            <div class="redes"><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a><a href="#"><i class="fa fa-">'redsocial'</i></a>
-            </div>
+        <div class="row">
+              <div class="col-sm-4">
+                <div class="img-perfil"><img src="img/team/1.jpg"/></div>
+                <p class="subtitulo">Kay Garland</p>
+                <p class="texto-contenido">Lead Designer</p>
+                <div class="redes"></div>
+                    <div class="red"><a href="#"><i class="fa fa-twitter"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-facebook"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-linkedin"></i></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="img-perfil"><img src="img/team/2.jpg"/></div>
+                <p class="subtitulo">Larry Parker</p>
+                <p class="texto-contenido">Lead Marketer</p>
+                <div class="redes"></div>
+                    <div class="red"><a href="#"><i class="fa fa-twitter"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-facebook"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-linkedin"></i></a></div>
+              </div>
+              <div class="col-sm-4">
+                <div class="img-perfil"><img src="img/team/3.jpg"/></div>
+                <p class="subtitulo">Diana Pertersen</p>
+                <p class="texto-contenido">Lead Developer</p>
+                <div class="redes"></div>
+                    <div class="red"><a href="#"><i class="fa fa-twitter"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-facebook"></i></a></div>
+                    <div class="red"><a href="#"><i class="fa fa-linkedin"></i></a></div>
+              </div>
+        </div>
+        <div class="row">
+          <p class="texto-team">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sun ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusda, recusandae sit vero unde.</p>
+        </div>
       </div>
     </section>
+    <section id="clientes">
+      <div class="container">
+        <div class="row text-center">
+              <div class="col-sm-6 col-md-3"><a href="#"><img src="img/logos/envato.jpg"/></a></div>
+              <div class="col-sm-6 col-md-3"><a href="#"><img src="img/logos/designmodo.jpg"/></a></div>
+              <div class="col-sm-6 col-md-3"><a href="#"><img src="img/logos/themeforest.jpg"/></a></div>
+              <div class="col-sm-6 col-md-3"><a href="#"><img src="img/logos/creative-market.jpg"/></a></div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="pb-5">
+      <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h2 class="titulo-seccion">contact us</h2>
+                <p class="sub-seccion">Lorem ipsum dolor sit amet consectetur.</p>
+              </div>
+            </div>
+        <div class="row">
+          <div class="col-md-6">
+            <form>
+                  <input type="text" placeholder="YOUR NAME *" class="formulario"></input>
+                  <input type="text" placeholder="YOUR EMAIL *" class="formulario"></input>
+                  <input type="text" placeholder="YOUR PHONE *" class="formulario"></input>
+            </form>
+          </div>
+          <div class="col-md-6">
+                <textarea type="text" placeholder="YOUR MESSAGE *" class="formulario"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <button type="submit" class="btn-agency">send message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4">
+            <p class="copy">Copyright © Your Website 2014</p>
+          </div>
+          <div class="col-md-4">
+                <div class="red"><a href="#"><i class="fa fa-twitter"></i></a></div>
+                <div class="red"><a href="#"><i class="fa fa-facebook"></i></a></div>
+                <div class="red"><a href="#"><i class="fa fa-linkedin"></i></a></div>
+          </div>
+          <div class="col-md-4">
+            <p><a class="links">Privacy Policy</a><a class="links">Terms of use</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="assets/js/cbpAnimatedHeader.js"></script>
+    <script type="text/javascript" src="assets/js/classie.js"></script>
+    <script type="text/javascript" src="assets/js/jqBootstrapValidation.js"></script>
+    <script type="text/javascript" src="assets/js/contact_me.js"></script>
+    <script type="text/javascript" src="assets/js/agency.js"></script>
   </body>
 </html>
